@@ -1,0 +1,15 @@
+
+plugin.tx_bfbnberufe_berufe {
+    view {
+        # cat=plugin.tx_bfbnberufe_berufe/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:bfbn_berufe/Resources/Private/Templates/
+        # cat=plugin.tx_bfbnberufe_berufe/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:bfbn_berufe/Resources/Private/Partials/
+        # cat=plugin.tx_bfbnberufe_berufe/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:bfbn_berufe/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_bfbnberufe_berufe//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

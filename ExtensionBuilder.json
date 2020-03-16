@@ -1,0 +1,192 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    1074,
+                    69
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "suchen"
+                    ]
+                },
+                "name": "Berufe",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Tabelle der Ausbildungsberufe  und der m\u00f6glichen Ausbildungsrichtungen",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "847298500825"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Bezeichnung des Berufes",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "bezeichnung",
+                            "propertyType": "String",
+                            "uid": "1131814862019"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ausbildungsrichtung ABU",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbAbu",
+                            "propertyType": "Boolean",
+                            "uid": "761047451862"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ausbildungsrichtung Gesundheit",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbGh",
+                            "propertyType": "Boolean",
+                            "uid": "1390896019567"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ausbildungsrichtung Sozialwesen",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbS",
+                            "propertyType": "Boolean",
+                            "uid": "535016813244"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ausbildungsrichtung Technik",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbT",
+                            "propertyType": "Boolean",
+                            "uid": "1317303033483"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ausbildungsrichtung Wirtschaft und Internationale Wirtschaft",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbW",
+                            "propertyType": "Boolean",
+                            "uid": "472333479216"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ist Gesundheit Stern-Beruf?",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbGhStern",
+                            "propertyType": "Boolean",
+                            "uid": "1129245971770"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ist Sozialwesen Stern-Beruf?",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbSStern",
+                            "propertyType": "Boolean",
+                            "uid": "1486284617234"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ist Wirtschaft Stern-Beruf?",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ausbWStern",
+                            "propertyType": "Boolean",
+                            "uid": "728524258768"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Berufe und m\u00f6gliche Ausbildungsrichtungen",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "beta",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "bfbn_berufe",
+        "name": "BFBN Berufe",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "MB-Dienststellen FOSBOS",
+                "email": "info@bfbn.de",
+                "name": "BFBN-Team",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "description": "Ausbildungsberufe und zugeh\u00f6rige Ausbildungsrichtungen",
+                "key": "berufe",
+                "name": "BFBN Berufe"
+            }
+        ],
+        "vendorName": "BfbnBerufe"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2020-03-11 11:19",
+        "extension_builder_version": "9.10.2",
+        "be_user": " (1)"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "bfbnberufe/bfbn-berufe",
+    "type": "typo3-cms-extension",
+    "description": "Berufe und m\u00f6gliche Ausbildungsrichtungen",
+    "authors": [
+        {
+            "name": "BFBN-Team",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "BfbnBerufe\\BfbnBerufe\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BfbnBerufe\\BfbnBerufe\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "bfbnberufe/bfbn-berufe": "self.version",
+        "typo3-ter/bfbn-berufe": "self.version"
+    }
+}

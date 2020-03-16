@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-03-11T11:19:03Z" product-name="bfbn_berufe">
+		<header/>
+		<body>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe">
+				<source>Berufe</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.bezeichnung">
+				<source>Bezeichnung</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_abu">
+				<source>Ausb Abu</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_gh">
+				<source>Ausb Gh</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_s">
+				<source>Ausb S</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_t">
+				<source>Ausb T</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_w">
+				<source>Ausb W</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_gh_stern">
+				<source>Ausb Gh Stern</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_s_stern">
+				<source>Ausb S Stern</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_w_stern">
+				<source>Ausb W Stern</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbn_berufe_berufe.name">
+				<source>BFBN Berufe</source>
+			</trans-unit>
+			<trans-unit id="tx_bfbn_berufe_berufe.description">
+				<source>Ausbildungsberufe und zugehörige Ausbildungsrichtungen</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	This Template is responsible for creating a table of domain objects.
+
+	If you modify this template, do not forget to change the overwrite settings
+	in /Configuration/ExtensionBuilder/settings.yaml:
+	  Resources:
+		Private:
+		  Templates:
+			List.html: keep
+
+	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+	<f:section name="content">
+		<h1>Listing for Berufe</h1>
+
+		<f:flashMessages />
+
+		<table  class="tx_bfbnberufe" >
+			<tr>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.bezeichnung" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_abu" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_gh" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_s" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_t" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_w" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_gh_stern" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_s_stern" /></th>
+				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_w_stern" /></th>
+				<th> </th>
+				<th> </th>
+			</tr>
+
+			<f:for each="{beruves}" as="berufe">
+				<tr>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.bezeichnung}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbAbu}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbGh}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbS}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbT}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbW}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbGhStern}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbSStern}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbWStern}</f:link.action></td>
+					<td><f:link.action action="edit" arguments="{berufe : berufe}">Edit</f:link.action></td>
+					<td><f:link.action action="delete" arguments="{berufe : berufe}">Delete</f:link.action></td>
+				</tr>
+			</f:for>
+		</table>
+
+		<f:link.action action="new">New Berufe</f:link.action>
+	</f:section>
+</html>
