@@ -21,5 +21,21 @@ class BerufeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     /**
      * @var array
      */
-    protected $defaultOrderings = ['sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
+    protected $defaultOrderings = ['uid' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
+    /**
+     * Gets Berufe following by Suchbegriff
+     *
+     * @return object
+     */
+
+    public function findBerufe(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche = NULL){
+        $query = $this->createQuery();
+        if ($suche !== NULL) {
+            $result =  $query->matching($query->like('bezeichnung', '%' . $suche->getSucheBeruf() . '%'))->execute();
+        }
+        else {
+            $result = $query->execute();
+        }
+        return $result;
+    }    
 }
