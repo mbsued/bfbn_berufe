@@ -31,10 +31,10 @@ class BerufeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * 
      * @return void
      */
-    public function listAction()
-    {
-        $beruves = $this->berufeRepository->findAll();
-        $this->view->assign('beruves', $beruves);
+    public function listAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche = NULL)
+    {   
+        $this->view->assign('suche', $suche);
+        $this->view->assign('beruves', $this->berufeRepository->findBerufe($suche));
     }
 
     /**
@@ -46,14 +46,5 @@ class BerufeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function showAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Berufe $berufe)
     {
         $this->view->assign('berufe', $berufe);
-    }
-
-    /**
-     * action suchen
-     * 
-     * @return void
-     */
-    public function suchenAction()
-    {
     }
 }
