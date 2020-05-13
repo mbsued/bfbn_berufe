@@ -13,42 +13,33 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Listing for Berufe</h1>
 
 		<f:flashMessages />
-
-		<table  class="tx_bfbnberufe" >
-			<tr>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.bezeichnung" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_abu" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_gh" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_s" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_t" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_w" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_gh_stern" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_s_stern" /></th>
-				<th><f:translate key="tx_bfbnberufe_domain_model_berufe.ausb_w_stern" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
-			<f:for each="{beruves}" as="berufe">
-				<tr>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.bezeichnung}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbAbu}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbGh}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbS}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbT}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbW}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbGhStern}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbSStern}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{berufe : berufe}"> {berufe.ausbWStern}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{berufe : berufe}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{berufe : berufe}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Berufe</f:link.action>
+                <f:form class="powermail_form powermail_form_1 form-horizontal" method="post" action="list" name="suche" object="{suche}">
+                    <div class="powermail_fieldwrap powermail_fieldwrap_type_input layout2 form-group col-md-6">
+                        <label for="bezeichnung" class="control-label col-sm-2" title="Berufsbezeichnung">Berufsbezeichnung</label>
+                        <div class="col-sm-10">
+                            <f:form.textfield  id="sucheBeruf" class="form-control" property="sucheBeruf" />
+                        </div>
+                    </div>
+                    <div class="powermail_fieldwrap powermail_fieldwrap_type_submit layout1 form-group col-md-6">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <f:form.submit class="btn btn-primary"  value="Suchen">Suchen</f:form.submit>                           
+                        </div>
+                    </div>
+                </f:form>
+                <div class="table-responsive">
+                    <table  class="table table-bordered mb-5" >
+                        <thead class="bg-primary">
+                            <tr class="bg-primary">
+				<th>Berufsbezeichnung</th>
+				<th colspan="5">Ausbildungsrichtungen</th>
+                            </tr>
+                        </thead>
+                        <f:for each="{beruves}" as="berufe">
+                            <f:render partial="Berufe/List" arguments="{berufe : berufe}"/>
+                        </f:for>                        
+                    </table>
+                </div>    
 	</f:section>
 </html>
