@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+			
+            <tr>
+                <td>{berufe.bezeichnung}</td>
+                <td>
+                    <f:if condition="{berufe.ausbAbu}">
+                        <f:then> 
+                                A                          
+                        </f:then>
+                        <f:else> 
+                                &nbsp;
+                        </f:else>
+                    </f:if>
+                </td>
+                <td>
+                    <f:if condition="{berufe.ausbGh}">
+                        <f:then> 
+                                G
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{berufe.ausbGHStern}">
+                                <f:then>
+                                        G*                                  
+                                </f:then>
+                                <f:else>
+                                        &nbsp;
+                                </f:else>
+                            </f:if>                           
+                        </f:else>
+                    </f:if>
+                </td>
+                <td>
+                    <f:if condition="{berufe.ausbS}">
+                        <f:then>
+                                S
+                        </f:then>
+                        <f:else>
+                                &nbsp;
+                        </f:else>
+                    </f:if>
+                </td>
+                <td>
+                    <f:if condition="{berufe.ausbT}">
+                        <f:then>
+                                T
+                        </f:then>
+                        <f:else>
+                                &nbsp;
+                        </f:else>
+                    </f:if>
+                </td>       
+                <td>
+                    <f:if condition="{berufe.ausbW}">
+                        <f:then>
+                                W
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{berufe.ausbWStern}">
+                                <f:then>
+                                        W*
+                                </f:then>
+                                <f:else>
+                                       &nbsp;
+                                </f:else>
+                            </f:if>
+                        </f:else>    
+                    </f:if>
+                </td>
+            </tr>
+
+</html>

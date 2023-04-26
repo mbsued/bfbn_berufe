@@ -6,16 +6,11 @@ call_user_func(
     {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'BfbnBerufe.BfbnBerufe',
+            'BfbnBerufe',
             'Berufe',
-            [
-                'Berufe' => 'list, show, suchen'
-            ],
-            // non-cacheable actions
-            [
-                'Berufe' => 'list, show, suchen'
-            ]
-        );
+			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show'],
+			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show']			
+        );		
 
     // wizards
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(

@@ -5,13 +5,6 @@ call_user_func(
     function()
     {
 
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'BfbnBerufe.BfbnBerufe',
-            'Berufe',
-            'BFBN Berufe'
-        );
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('bfbn_berufe', 'Configuration/TypoScript', 'BFBN Berufe');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bfbnberufe_domain_model_berufe', 'EXT:bfbn_berufe/Resources/Private/Language/locallang_csh_tx_bfbnberufe_domain_model_berufe.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bfbnberufe_domain_model_berufe');

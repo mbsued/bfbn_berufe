@@ -17,7 +17,13 @@ namespace BfbnBerufe\BfbnBerufe\Domain\Model;
  */
 class Berufe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
+    /**
+     * keep it as string as it should be only used during imports
+     *
+     * @var string
+     */
+    protected $feGroup;
+	
     /**
      * Bezeichnung des Berufes
      * 
@@ -358,4 +364,24 @@ class Berufe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->ausbWStern;
     }
+	
+    /**
+     * Get fe groups
+     *
+     * @return string
+     */
+    public function getFeGroup()
+    {
+        return $this->feGroup;
+    }
+
+    /**
+     * Set fe group
+     *
+     * @param string $feGroup comma separated list
+     */
+    public function setFeGroup($feGroup)
+    {
+        $this->feGroup = $feGroup;
+    }	
 }

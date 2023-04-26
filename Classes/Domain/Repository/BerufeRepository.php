@@ -28,7 +28,7 @@ class BerufeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @return object
      */
 
-    public function findBerufe(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche = NULL){
+    public function findBerufe(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche= NULL){
         $query = $this->createQuery();
         if ($suche !== NULL) {
             $result =  $query->matching($query->like('bezeichnung', '%' . $suche->getSucheBeruf() . '%'))->execute();
@@ -37,5 +37,6 @@ class BerufeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $result = $query->execute();
         }
         return $result;
-    }    
+    } 
+	
 }

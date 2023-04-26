@@ -1,6 +1,7 @@
 <?php
 namespace BfbnBerufe\BfbnBerufe\Controller;
 
+use BfbnBerufe\BfbnBerufe\Domain\Repository\BerufeRepository;
 
 /***
  *
@@ -22,9 +23,19 @@ class BerufeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * berufeRepository
      * 
      * @var \BfbnBerufe\BfbnBerufe\Domain\Repository\BerufeRepository
-     * @inject
+     * 
      */
     protected $berufeRepository = null;
+
+    /**
+     * Inject the Berufe repository
+     *
+     * @param \BfbnBerufe\BfbnBerufe\Domain\Repository\BerufeRepository $BerufeRepository
+     */
+    public function injectBerufeRepository(BerufeRepository $BerufeRepository)
+    {
+        $this->berufeRepository = $BerufeRepository;
+    }
 
     /**
      * action list
@@ -32,9 +43,10 @@ class BerufeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * @return void
      */
     public function listAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche = NULL)
-    {   
-        $this->view->assign('suche', $suche);
-        $this->view->assign('beruves', $this->berufeRepository->findBerufe($suche));
+    {
+		$this->view->assign('suche', $suche);		
+		$this->view->assign('beruves', $this->berufeRepository->findBerufe($suche));
+
     }
 
     /**

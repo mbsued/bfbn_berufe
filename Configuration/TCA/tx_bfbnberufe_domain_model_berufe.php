@@ -16,37 +16,26 @@ return [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
+			'fe_group' => 'fe_group',			
         ],
         'searchFields' => 'bezeichnung',
-        'iconfile' => 'EXT:bfbn_berufe/Resources/Public/Icons/tx_bfbnberufe_domain_model_berufe.gif'
+        'iconfile' => 'EXT:bfbn_berufe/Resources/Public/Icons/tx_bfbnberufe_domain_model_berufe.svg'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, bezeichnung, ausb_abu, ausb_gh, ausb_s, ausb_t, ausb_w, ausb_gh_stern, ausb_s_stern, ausb_w_stern',
+    'interface' => [        
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, bezeichnung, ausb_abu, ausb_gh, ausb_s, ausb_t, ausb_w, ausb_gh_stern, ausb_s_stern, ausb_w_stern, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, bezeichnung, ausb_abu, ausb_gh, ausb_s, ausb_t, ausb_w, ausb_gh_stern, ausb_s_stern, ausb_w_stern, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime, fe_group'],
     ],
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ]
-                ],
-                'default' => 0,
+                'type' => 'language',
             ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
@@ -62,14 +51,6 @@ return [
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
-            ],
-        ],
-        't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'max' => 255,
             ],
         ],
         'hidden' => [
@@ -116,7 +97,33 @@ return [
                 ]
             ],
         ],
-
+        'fe_group' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.fe_group',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'size' => 5,
+                'maxitems' => 20,
+                'items' => [
+                    [
+                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hide_at_login',
+                        -1,
+                    ],
+                    [
+                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.any_login',
+                        -2,
+                    ],
+                    [
+                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.usergroups',
+                        '--div--',
+                    ],
+                ],
+                'exclusiveKeys' => '-1,-2',
+                'foreign_table' => 'fe_groups',
+                'foreign_table_where' => 'ORDER BY fe_groups.title',
+            ],
+        ],
         'bezeichnung' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.bezeichnung',
@@ -131,9 +138,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_abu',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -144,9 +153,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_gh',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -157,9 +168,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_s',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -170,9 +183,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_t',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -183,9 +198,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_w',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -196,9 +213,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_gh_stern',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -209,9 +228,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_s_stern',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,
@@ -222,9 +243,11 @@ return [
             'label' => 'LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbnberufe_domain_model_berufe.ausb_w_stern',
             'config' => [
                 'type' => 'check',
+				'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => ''
                     ]
                 ],
                 'default' => 0,

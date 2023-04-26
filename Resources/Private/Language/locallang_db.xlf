@@ -10,28 +10,28 @@
 				<source>Bezeichnung</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_abu">
-				<source>Ausb Abu</source>
+				<source>ABU</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_gh">
-				<source>Ausb Gh</source>
+				<source>Gesundheit</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_s">
-				<source>Ausb S</source>
+				<source>Sozialwesen</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_t">
-				<source>Ausb T</source>
+				<source>Technik</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_w">
-				<source>Ausb W</source>
+				<source>Wirtschaft</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_gh_stern">
-				<source>Ausb Gh Stern</source>
+				<source>Gesundheit*</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_s_stern">
-				<source>Ausb S Stern</source>
+				<source>Sozialwesen*</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbnberufe_domain_model_berufe.ausb_w_stern">
-				<source>Ausb W Stern</source>
+				<source>Wirtschaft*</source>
 			</trans-unit>
 			<trans-unit id="tx_bfbn_berufe_berufe.name">
 				<source>BFBN Berufe</source>
