@@ -2,6 +2,7 @@
 namespace BfbnBerufe\BfbnBerufe\Controller;
 
 use BfbnBerufe\BfbnBerufe\Domain\Repository\BerufeRepository;
+use Psr\Http\Message\ResponseInterface;
 
 /***
  *
@@ -42,10 +43,11 @@ class BerufeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * 
      * @return void
      */
-    public function listAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche = NULL)
+    public function listAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Suche $suche = NULL): ResponseInterface
     {
 		$this->view->assign('suche', $suche);		
 		$this->view->assign('beruves', $this->berufeRepository->findBerufe($suche));
+		return $this->htmlResponse($this->view->render());		
 
     }
 
@@ -55,8 +57,9 @@ class BerufeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * @param \BfbnBerufe\BfbnBerufe\Domain\Model\Berufe $berufe
      * @return void
      */
-    public function showAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Berufe $berufe)
+    public function showAction(\BfbnBerufe\BfbnBerufe\Domain\Model\Berufe $berufe): ResponseInterface
     {
         $this->view->assign('berufe', $berufe);
+		return $this->htmlResponse($this->view->render());		
     }
 }
