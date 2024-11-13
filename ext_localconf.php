@@ -9,7 +9,8 @@ call_user_func(
             'BfbnBerufe',
             'Berufe',
 			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show'],
-			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show']			
+			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show'],
+			 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
         );		
 
     // wizards
@@ -22,8 +23,7 @@ call_user_func(
                         title = LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbn_berufe_berufe.name
                         description = LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbn_berufe_berufe.description
                         tt_content_defValues {
-                            CType = list
-                            list_type = bfbnberufe_berufe
+                            CType = bfbnberufe_berufe
                         }
                     }
                 }
