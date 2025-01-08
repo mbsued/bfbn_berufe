@@ -9,7 +9,7 @@ namespace BfbnBerufe\BfbnBerufe\Domain\Repository;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2020 BFBN-Team <info@bfbn.de>, MB-Dienststellen FOSBOS
+ *  (c) 2025 BFBN-Team <info@bfbn.de>, MB-Dienststellen FOSBOS
  *
  ***/
 /**
@@ -21,7 +21,7 @@ class BerufeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     /**
      * @var array
      */
-    protected $defaultOrderings = ['uid' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
+    protected $defaultOrderings = ['bezeichnung' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
     /**
      * Gets Berufe following by Suchbegriff
      *
