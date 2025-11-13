@@ -1,0 +1,15 @@
+mod {
+	wizards.newContentElement.wizardItems.plugins {
+		elements {
+			berufe {
+				iconIdentifier = bfbn_berufe-plugin-berufe
+				title = LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbn_berufe_berufe.name
+				description = LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbn_berufe_berufe.description
+				tt_content_defValues {
+					CType = bfbnberufe_berufe
+				}
+			}
+		}
+		show = *
+	}
+}

@@ -11,26 +11,8 @@ call_user_func(
 			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show'],
 			[\BfbnBerufe\BfbnBerufe\Controller\BerufeController::class => 'list,show'],
 			 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
-        );		
+        );
 
-    // wizards
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    berufe {
-                        iconIdentifier = bfbn_berufe-plugin-berufe
-                        title = LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbn_berufe_berufe.name
-                        description = LLL:EXT:bfbn_berufe/Resources/Private/Language/locallang_db.xlf:tx_bfbn_berufe_berufe.description
-                        tt_content_defValues {
-                            CType = bfbnberufe_berufe
-                        }
-                    }
-                }
-                show = *
-            }
-       }'
-    );
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 		
 			$iconRegistry->registerIcon(
