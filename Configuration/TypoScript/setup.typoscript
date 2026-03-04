@@ -2,14 +2,14 @@
 plugin.tx_bfbnberufe_berufe {
     view {
         templateRootPaths.0 = EXT:{extension.shortExtensionKey}/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_bfbnberufe_berufe.view.templateRootPath}
+        templateRootPaths.1 = {$berufe.view.templateRootPath}
         partialRootPaths.0 = EXT:bfbn_berufe/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_bfbnberufe_berufe.view.partialRootPath}
+        partialRootPaths.1 = {$berufe.view.partialRootPath}
         layoutRootPaths.0 = EXT:tx_bfbnberufe/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_bfbnberufe_berufe.view.layoutRootPath}
+        layoutRootPaths.1 = {$berufe.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_bfbnberufe_berufe.persistence.storagePid}
+        storagePid = {$berufe.persistence.storagePid}
         #recursive = 1
     }
     features {

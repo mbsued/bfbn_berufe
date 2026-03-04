@@ -1,41 +1,115 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:b="http://typo3.org/ns/MbFosbos/Bfbn/ViewHelpers"
+	data-namespace-typo3-fluid="true">
 	<f:layout name="Default" />
-
-
 	<f:section name="content">
-
 		<f:flashMessages />
-		<div class="row">
-			<div class="col-md-6">
-                <f:form class="powermail_form powermail_form_1 form-horizontal" method="post" action="list" name="suche" object="{suche}">
-                    <div class="powermail_fieldwrap powermail_fieldwrap_type_input layout2 form-group col-md-12 mb-2">
-                        <label for="bezeichnung" class="control-label col-sm-6" title="Berufsbezeichnung">Suche nach Berufsbezeichnung</label>
-                        <div class="col-sm-10">
-                            <f:form.textfield  id="sucheBeruf" class="form-control" property="sucheBeruf" />
-                        </div>
-                    </div>
-                    <div class="powermail_fieldwrap powermail_fieldwrap_type_submit layout1 form-group col-md-6">
-                        <div class="col-sm-10 col-sm-offset-2 mt-2 mb-5">
-                            <f:form.submit class="btn btn-primary"  value="Suchen">Suche</f:form.submit>                           
-                        </div>
-                    </div>
-                </f:form>
-			</div>
-			<div class="col-md-6">			
-			</div>
-		</div>
-		<div class="table-responsive">
-			<table  class="table table-bordered mb-5" >
-				<thead class="bg-primary text-white">
-					<tr>
-						<td>Berufsbezeichnung</td>
-						<td colspan="5">Ausbildungsrichtungen</td>
-					</tr>
-				</thead>
-				<f:for each="{beruves}" as="berufe">
-					<f:render partial="Berufe/List" arguments="{berufe : berufe}"/>
-				</f:for>                        
-			</table>
-		</div>    
+        <div class="card mt-3 mb-3">
+          <h5 class="card-header">Suche nach Berufsbezeichnung</h5>
+          <f:form class="form-horizontal ms-3 me-3 mt-3 mb-3" method="post" action="list" name="suche" object="{suche}">
+            <div class="form-group col-md-12 mb-2"> 
+              <div class="col-sm-10">
+                <f:form.textfield  id="sucheBeruf" class="form-control" property="sucheBeruf" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2 mt-2">
+                <button type="submit" class="btn btn-primary" >
+					<b:icon iconfig="fa7:solid,magnifying-glass" additionalAttributes="{aria-hidden='true'}" />				
+				Suchen
+				</button>                           
+              </div>
+            </div>
+          </f:form>
+        </div>
+      	<div style="overflow-x:auto;">
+          <div class="table-responsive">
+              <table class="table table-bordered table-striped table-sm mb-5" >
+                  <thead class="bg-primary text-white">
+                      <tr class="align-middle">
+                          <td>Berufsbezeichnung</td>
+                          <td style="text-align: center;" colspan="5">
+                            Ausbildungsrichtungen
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ausbModal" title="Informationen zu den Ausbildungsrichtungen">
+								<b:icon iconfig="fa7:solid,circle-question" additionalAttributes="{aria-hidden='true'}" />
+								&nbsp;Legende</button>
+                          </td>
+                      </tr>
+                  </thead>
+                  <f:for each="{beruves}" as="berufe">
+                      <f:render partial="Berufe/List" arguments="{berufe : berufe}"/>
+                  </f:for>                        
+              </table>
+          </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="ausbModal" tabindex="-1" aria-labelledby="ausbModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="ausbModalLabel">Ausbildungsrichtungen</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-2">
+                  	<strong>A</strong>
+                  </div>
+                  <div class="col-sm-10">
+                  	Agrarwirtschaft, Bio- und Umwelttechnologie
+                  </div>                  
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    <strong>G</strong>
+                  </div>
+                  <div class="col-sm-10">
+                  	Gesundheit
+                  </div>                  
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    <strong>S</strong>
+                  </div>
+                  <div class="col-sm-10">
+                  	Sozialwesen
+                  </div>                  
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    <strong>T</strong>
+                  </div>
+                  <div class="col-sm-10">
+                  	Technik
+                  </div>                  
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    <strong>W</strong>
+                  </div>
+                  <div class="col-sm-10">
+                  	Wirtschaft und Verwaltung sowie Internationale Wirtschaft
+                  </div>                  
+                </div>                
+              </div>
+              <div class="container-fluid mt-3">
+                <h5>
+                  Ausbildungsrichtungen mit Stern (*)
+                </h5>
+                <p>
+                  Die Aufnahme in eine mit Stern (*) versehene Ausbildungsrichtung ist nur zu gestatten, wenn der Bewerber zusätzlich zu seiner Berufsausbildung ein mindestens sechswöchiges für die gewünschte Ausbildungsrichtung einschlägiges Praktikum in Vollzeit oder entsprechend länger in Teilzeit nachweist. <strong>Über die Anerkennung des Praktikums entscheidet die Schulleitung.</strong>
+                </p>
+                <p>
+Die Ministerialbeauftragten für die Berufliche Oberschule – Fachoberschulen und Berufsoberschulen – in Bayern entscheiden über die Zuordnung weiterer Berufe und Ausnahmen von der Zuordnung.
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>              
+            </div>
+          </div>
+        </div>
+      </div>
 	</f:section>
 </html>

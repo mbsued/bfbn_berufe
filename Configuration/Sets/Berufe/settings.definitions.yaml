@@ -1,0 +1,34 @@
+categories:
+  berufe:
+    label: 'BFBN - Berufe' 
+  berufe.templates:
+    label: 'Berufe - Templates'
+    parent: berufe
+  berufe.pages:
+    label: 'Berufe - Pages'
+    parent: berufe
+settings:
+
+  berufe.view.templateRootPath:
+    label: 'Path to Templates'
+    default: 'EXT:bfbn_berufe/Resources/Private/Templates/'
+    type: string
+    category: berufe.templates
+
+  berufe.view.partialRootPath:
+    label: 'Path to Partials'
+    default: 'EXT:bfbn_berufe/Resources/Private/Partials/'
+    type: string
+    category: berufe.templates
+
+  berufe.view.layoutRootPath:
+    label: 'Path to Layouts'
+    default: 'EXT:bfbn_berufe/Resources/Private/Layouts/'
+    type: string
+    category: berufe.templates
+
+  berufe.persistence.storagePid:
+    label: 'Storage PID'
+    category: berufe.pages
+    default: 0
+    type: page    
